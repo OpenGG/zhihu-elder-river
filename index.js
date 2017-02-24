@@ -2,7 +2,7 @@
 // @name        zhihu-elder-river
 // @namespace   https://github.com/OpenGG/zhihu-elder-river
 // @description Make zhihu more elder-friendly.
-// @icon        https://cdn.rawgit.com/OpenGG/zhihu-elder-river/next/icon.png
+// @icon        https://cdn.rawgit.com/OpenGG/zhihu-elder-river/master/icon.png
 // @version     1.0.0
 // @noframes
 // @grant       none
@@ -13,8 +13,9 @@
 // ==/UserScript==
 
 /* jshint esversion: 6, strict: true */
+'use strict';
 (() => {
-  'use strict';
+  const name = 'zhihu-elder-river';
 
   const removeCookie = (key, domain, path = '/') => {
 
@@ -32,11 +33,16 @@
       setTimeout(resolve, time)
     );
 
-  const repeat = 10;
-
   const main = function* () {
+    const repeat = 10;
+
+    const key = 'nweb_qa';
+
+    const domain = '.zhihu.com';
+
     for (let i = 0; i < repeat; ++i) {
-      removeCookie('nweb_qa', '.zhihu.com');
+      removeCookie(key, domain);
+      console.log(`[${name}]: remove cookie ${key} on domain ${domain}`);
       yield wait(1000);
     }
   };
@@ -44,7 +50,7 @@
   co(main)
     .then(
       () => {
-        console.log('end');
+        console.log('[${name}]: end');
       },
       (e) => {
         console.error(e)
