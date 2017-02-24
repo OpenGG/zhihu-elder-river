@@ -17,8 +17,6 @@
   'use strict';
 
   const removeCookie = (key, domain, path = '/') => {
-    // path
-    const path = '/';
 
     // get a date in the past
     const expireDate = new Date(-1).toUTCString();
