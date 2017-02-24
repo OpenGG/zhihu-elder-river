@@ -7,7 +7,7 @@
 // @noframes
 // @grant       none
 // @run-at      document-start
-// @require     https://cdn.rawgit.com/OpenGG/zhihu-elder-river/next/co.js
+// @require     https://cdn.rawgit.com/OpenGG/zhihu-elder-river/master/co.js
 // @match       *://zhihu.com/*
 // @match       *://*.zhihu.com/*
 // ==/UserScript==
