@@ -242,4 +242,6 @@ const co = (() => {
   function isObject(val) {
     return Object == val.constructor;
   }
+
+  return co;
 })();
